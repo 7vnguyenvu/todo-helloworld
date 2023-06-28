@@ -1,0 +1,197 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    max-width: var(--max-width);
+    width: 100%;
+    padding: 3rem;
+    z-index: 2;
+    font-family: var(--font-mono);
+
+    .description {
+        margin: 1rem;
+        padding: 0;
+        height: 28rem;
+        overflow: overlay;
+    }
+
+    .head-title,
+    .item,
+    .add-item {
+        text-align: center;
+        min-width: 26rem;
+        width: 40rem;
+        font-weight: 700;
+        font-family: var(--font-mono);
+        margin: 0;
+        padding: 1rem;
+        background-color: rgba(var(--callout-rgb), 0.5);
+        border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+        border-radius: var(--border-radius);
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        background-color: #00c38c80;
+        border: 1px solid #00c38c;
+        position: relative;
+
+        .title {
+            flex: 1;
+            text-align: left;
+            padding: 0 1rem;
+        }
+
+        .action {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 6rem;
+            bottom: 0;
+        }
+    }
+
+    .item.item-done {
+        background-color: #5e5e5e80;
+        border: 1px solid #eee;
+
+        .icon-done {
+            color: #00c38c;
+        }
+    }
+
+    .item.dragging {
+        background-color: #8d8d8d80;
+        border: 1px solid #8ceb82;
+    }
+
+    .item:last-child {
+        margin-bottom: -1rem;
+    }
+
+    .add-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            flex: 1;
+            height: 2rem;
+            padding: 0 0.5rem;
+            margin-right: 1rem;
+            border-radius: 0.3rem;
+            outline: none;
+            background-color: rgba(42, 42, 42, 0.5);
+            border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+        }
+
+        .icon {
+            color: var(--color);
+            width: 2rem;
+            height: 2rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00c37f46;
+            border: 1px solid #00f1ad;
+            border-radius: 3rem;
+        }
+    }
+
+    .icon {
+        padding: 0 0.3rem;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25%, auto));
+    width: var(--max-width);
+    max-width: 100%;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+    .item:hover {
+        cursor: pointer;
+        background: rgba(0, 195, 140, 0.3);
+    }
+
+    .icon:hover {
+        cursor: pointer;
+        color: var(--color);
+    }
+
+    .add-item .icon:hover {
+        background-color: #00c37f1c;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    // .card:hover span {
+    //   transform: none;
+    // }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .content {
+        padding: 4rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        margin-bottom: 120px;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .container {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+    .grid {
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .vercelLogo {
+        filter: invert(1);
+    }
+
+    .logo {
+        filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

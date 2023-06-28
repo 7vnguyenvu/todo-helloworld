@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Quét nhà",
+        "isDone": false
+    },
+    {
+        "title": "Nấu cơm",
+        "isDone": false
+    },
+    {
+        "title": "Rửa bát",
+        "isDone": false
+    },
+    {
+        "title": "Làm bài tập",
+        "isDone": false
+    },
+    {
+        "title": "Làm vườn",
+        "isDone": false
+    },
+    {
+        "title": "Tập thể dục",
+        "isDone": false
+    }
+]
